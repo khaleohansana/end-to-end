@@ -1,33 +1,26 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
+import Home from './Home'
+import CreateCar from './CreateCar'
 
 class App extends Component {
-  state = {
-    message: "NO MESSAGE RECEIVED"
-  }
-
-
-  getData= async () => {
-    const url = "http://localhost:3001"
-    const response = await fetch(url)
-    const date = await response.json()
-
-    return data
-  }
-
-
-  async componentDidMount() {
-   const date = await this.getData() 
-
-   this.setState({ message: data })
-  }
-
   render() {
     return (
       <div className="App">
-      <h1>{this.state.message}</h1>
-    </div>
+   
+        <Router>
+          <div>
+            <nav>
+          <Link to="'/">Home </Link>
+          <Link to="/createcar">Create Car</Link>
+              </nav>
+            <Route exact path='/' component={Home}/>
+            <Route exact path='/createcar' component={CreateCar}/>
+          </div>
+        </Router>
+      </div>
     );
   }
 }
