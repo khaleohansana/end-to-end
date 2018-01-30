@@ -9,6 +9,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@angular/animations": "^5.2.2",
+    "@angular/cdk": "^5.1.0",
+    "@angular/material": "^5.1.0",
     "hapi": "^17.2.0",
     "react-router-dom": "^4.2.2"
   }
